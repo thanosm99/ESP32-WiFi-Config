@@ -1,3 +1,5 @@
+//Σύνδεση της ESP32 με MQTT
+
 #include <WiFi.h>
 #include <WiFiClientSecure.h>
 #include <PubSubClient.h>
