@@ -2,16 +2,16 @@
 #include <WiFiClientSecure.h>
 #include <PubSubClient.h>
 
-  const char* ssid = "Vodafone-E48220612";
-  const char* password = "T6945373395m.";
+  const char* ssid = "USER_SSID";
+  const char* password = "USER_PASS";
 
-  const char* mqtt_server = "broker.hivemq.com";
-  const int mqtt_port = 8883;
+  const char* mqtt_server = "MQTT_SERVER";
+  const int mqtt_port = MQTT_PORT;
 
   WiFiClientSecure espClient; 
   PubSubClient client(espClient);
 
-  const char* mqtt_topic = "/ene262017077/iotcontrol";
+  const char* mqtt_topic = "USER_TOPIC";
 
   const int relayPin = 5;
 
@@ -61,7 +61,7 @@ void reconnect() {
     
     if (client.connect(clientId.c_str())) {
       Serial.println("connected");
-      client.subscribe("/ene262017077/iotcontrol");
+      client.subscribe("USER_TOPIC");
       client.publish(mqtt_topic, "Hello from ESP32");
     } else {
       Serial.print("failed, rc=");
